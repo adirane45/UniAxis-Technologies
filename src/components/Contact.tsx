@@ -4,27 +4,10 @@ import { useState, FormEvent } from 'react';
 import ScrollReveal from '@/components/ScrollReveal';
 import { Mail, MapPin, Globe, Send, CheckCircle } from 'lucide-react';
 
-const services = [
-  'IT Infrastructure Setup',
-  'FTP Server Configuration',
-  'RDP & Remote Access',
-  'Firewall & Security Hardening',
-  'CCTV Installation',
-  'PC Maintenance',
-  'Website Design',
-  'Website Development',
-  'Deployment & Hosting',
-  'Performance Optimization',
-  'SaaS Development',
-  'Internship Program',
-  'Other',
-];
-
 interface FormData {
   name: string;
   email: string;
   phone: string;
-  service: string;
   message: string;
 }
 
@@ -33,7 +16,6 @@ export default function Contact() {
     name: '',
     email: '',
     phone: '',
-    service: '',
     message: '',
   });
   const [errors, setErrors] = useState<Partial<FormData>>({});
@@ -54,7 +36,6 @@ export default function Contact() {
     e.preventDefault();
     if (!validate()) return;
     setLoading(true);
-    // Simulate form submission
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
@@ -67,22 +48,19 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-[#0d2137]">
+    <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-medium mb-4">
+          <div className="text-center mb-14">
+            <span className="inline-block px-3 py-1 rounded-full border border-blue-200 bg-blue-50 text-[#1d4ed8] text-xs font-medium mb-4">
               Get In Touch
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Let&apos;s{' '}
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                Work Together
-              </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#0a1628] mb-4">
+              Contact Us
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Ready to transform your business with cutting-edge technology? Get in touch for a free consultation.
+            <p className="text-gray-500 max-w-xl mx-auto">
+              Ready to transform your business with technology? Get in touch for a free consultation.
             </p>
           </div>
         </ScrollReveal>
@@ -91,36 +69,36 @@ export default function Contact() {
           {/* Contact Info */}
           <div className="lg:col-span-2 space-y-6">
             <ScrollReveal>
-              <div className="p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
-                <h3 className="text-white font-semibold mb-6">Contact Information</h3>
+              <div className="p-6 rounded border border-gray-200 bg-white">
+                <h3 className="text-[#0a1628] font-semibold mb-5 text-sm">Contact Information</h3>
                 <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="text-cyan-400" size={18} />
+                  <div className="flex items-start gap-3">
+                    <div className="w-9 h-9 rounded bg-blue-50 flex items-center justify-center flex-shrink-0">
+                      <Mail className="text-[#1d4ed8]" size={16} />
                     </div>
                     <div>
-                      <p className="text-white text-sm font-medium">Location</p>
-                      <p className="text-gray-400 text-sm">Jalgaon, Maharashtra, India</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
-                      <Mail className="text-cyan-400" size={18} />
-                    </div>
-                    <div>
-                      <p className="text-white text-sm font-medium">Email</p>
-                      <a href="mailto:support@uniaxis.tech" className="text-gray-400 hover:text-cyan-400 text-sm transition-colors">
+                      <p className="text-[#0a1628] text-sm font-medium">📧 Email</p>
+                      <a href="mailto:support@uniaxis.tech" className="text-gray-500 hover:text-[#1d4ed8] text-sm transition-colors">
                         support@uniaxis.tech
                       </a>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
-                      <Globe className="text-cyan-400" size={18} />
+                  <div className="flex items-start gap-3">
+                    <div className="w-9 h-9 rounded bg-blue-50 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="text-[#1d4ed8]" size={16} />
                     </div>
                     <div>
-                      <p className="text-white text-sm font-medium">Website</p>
-                      <a href="https://www.uniaxis.tech" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 text-sm transition-colors">
+                      <p className="text-[#0a1628] text-sm font-medium">📍 Location</p>
+                      <p className="text-gray-500 text-sm">Jalgaon, Maharashtra</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-9 h-9 rounded bg-blue-50 flex items-center justify-center flex-shrink-0">
+                      <Globe className="text-[#1d4ed8]" size={16} />
+                    </div>
+                    <div>
+                      <p className="text-[#0a1628] text-sm font-medium">🌐 Website</p>
+                      <a href="https://www.uniaxis.tech" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-[#1d4ed8] text-sm transition-colors">
                         www.uniaxis.tech
                       </a>
                     </div>
@@ -129,9 +107,9 @@ export default function Contact() {
               </div>
             </ScrollReveal>
 
-            {/* Map placeholder */}
+            {/* Map */}
             <ScrollReveal delay={100}>
-              <div className="rounded-xl overflow-hidden border border-white/10">
+              <div className="rounded overflow-hidden border border-gray-200">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59778.20296946647!2d75.51388!3d21.00935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd90f3f7a7d4e2b%3A0x8a69b09a06b7a3a5!2sJalgaon%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                   width="100%"
@@ -148,112 +126,95 @@ export default function Contact() {
 
           {/* Contact Form */}
           <div className="lg:col-span-3">
-            <ScrollReveal delay={200}>
+            <ScrollReveal delay={150}>
               {submitted ? (
-                <div className="p-8 rounded-xl border border-cyan-500/30 bg-cyan-500/10 backdrop-blur-sm text-center">
-                  <CheckCircle className="text-cyan-400 mx-auto mb-4" size={48} />
-                  <h3 className="text-white text-xl font-bold mb-2">Message Sent Successfully!</h3>
-                  <p className="text-gray-400 mb-6">
-                    Thank you for reaching out! We&apos;ll get back to you within 24 hours.
+                <div className="p-8 rounded border border-green-200 bg-green-50 text-center">
+                  <CheckCircle className="text-green-600 mx-auto mb-4" size={40} />
+                  <h3 className="text-[#0a1628] text-xl font-bold mb-2">Message Sent Successfully!</h3>
+                  <p className="text-gray-500 mb-6">
+                    Thank you for reaching out. We&apos;ll get back to you within 24 hours.
                   </p>
                   <button
-                    onClick={() => { setSubmitted(false); setForm({ name: '', email: '', phone: '', service: '', message: '' }); }}
-                    className="px-6 py-2.5 border border-cyan-500/50 text-cyan-400 rounded-lg text-sm hover:bg-cyan-500/10 transition-colors"
+                    onClick={() => { setSubmitted(false); setForm({ name: '', email: '', phone: '', message: '' }); }}
+                    className="px-5 py-2 border border-[#0a1628] text-[#0a1628] rounded text-sm hover:bg-[#0a1628] hover:text-white transition-colors"
                   >
                     Send Another Message
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="p-8 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm space-y-5">
+                <form onSubmit={handleSubmit} className="p-8 rounded border border-gray-200 bg-white space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
                     {/* Name */}
                     <div>
-                      <label className="block text-gray-300 text-sm font-medium mb-1.5">
-                        Full Name <span className="text-red-400">*</span>
+                      <label className="block text-gray-700 text-sm font-medium mb-1.5">
+                        Name <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="text"
                         value={form.name}
                         onChange={(e) => handleChange('name', e.target.value)}
                         placeholder="John Doe"
-                        className={`w-full px-4 py-2.5 rounded-lg bg-white/5 border ${errors.name ? 'border-red-500/50' : 'border-white/10'} text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-500/50 focus:bg-cyan-500/5 transition-all`}
+                        className={`w-full px-4 py-2.5 rounded border ${errors.name ? 'border-red-400' : 'border-gray-300'} text-[#0a1628] placeholder-gray-400 text-sm focus:outline-none focus:border-[#1d4ed8] transition-colors`}
                       />
-                      {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
+                      {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
                     </div>
 
                     {/* Email */}
                     <div>
-                      <label className="block text-gray-300 text-sm font-medium mb-1.5">
-                        Email Address <span className="text-red-400">*</span>
+                      <label className="block text-gray-700 text-sm font-medium mb-1.5">
+                        Email <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="email"
                         value={form.email}
                         onChange={(e) => handleChange('email', e.target.value)}
                         placeholder="john@example.com"
-                        className={`w-full px-4 py-2.5 rounded-lg bg-white/5 border ${errors.email ? 'border-red-500/50' : 'border-white/10'} text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-500/50 focus:bg-cyan-500/5 transition-all`}
+                        className={`w-full px-4 py-2.5 rounded border ${errors.email ? 'border-red-400' : 'border-gray-300'} text-[#0a1628] placeholder-gray-400 text-sm focus:outline-none focus:border-[#1d4ed8] transition-colors`}
                       />
-                      {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
+                      {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
                     </div>
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-5">
-                    {/* Phone */}
-                    <div>
-                      <label className="block text-gray-300 text-sm font-medium mb-1.5">Phone Number</label>
-                      <input
-                        type="tel"
-                        value={form.phone}
-                        onChange={(e) => handleChange('phone', e.target.value)}
-                        placeholder="+91 98765 43210"
-                        className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-500/50 focus:bg-cyan-500/5 transition-all"
-                      />
-                    </div>
-
-                    {/* Service */}
-                    <div>
-                      <label className="block text-gray-300 text-sm font-medium mb-1.5">Service Required</label>
-                      <select
-                        value={form.service}
-                        onChange={(e) => handleChange('service', e.target.value)}
-                        className="w-full px-4 py-2.5 rounded-lg bg-[#0d2137] border border-white/10 text-gray-300 text-sm focus:outline-none focus:border-cyan-500/50 transition-all"
-                      >
-                        <option value="">Select a service</option>
-                        {services.map((s) => (
-                          <option key={s} value={s}>{s}</option>
-                        ))}
-                      </select>
-                    </div>
+                  {/* Phone */}
+                  <div>
+                    <label className="block text-gray-700 text-sm font-medium mb-1.5">Phone</label>
+                    <input
+                      type="tel"
+                      value={form.phone}
+                      onChange={(e) => handleChange('phone', e.target.value)}
+                      placeholder="+91 98765 43210"
+                      className="w-full px-4 py-2.5 rounded border border-gray-300 text-[#0a1628] placeholder-gray-400 text-sm focus:outline-none focus:border-[#1d4ed8] transition-colors"
+                    />
                   </div>
 
                   {/* Message */}
                   <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-1.5">
-                      Message <span className="text-red-400">*</span>
+                    <label className="block text-gray-700 text-sm font-medium mb-1.5">
+                      Message <span className="text-red-500">*</span>
                     </label>
                     <textarea
                       value={form.message}
                       onChange={(e) => handleChange('message', e.target.value)}
                       placeholder="Tell us about your project or requirements..."
                       rows={5}
-                      className={`w-full px-4 py-2.5 rounded-lg bg-white/5 border ${errors.message ? 'border-red-500/50' : 'border-white/10'} text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-500/50 focus:bg-cyan-500/5 transition-all resize-none`}
+                      className={`w-full px-4 py-2.5 rounded border ${errors.message ? 'border-red-400' : 'border-gray-300'} text-[#0a1628] placeholder-gray-400 text-sm focus:outline-none focus:border-[#1d4ed8] transition-colors resize-none`}
                     />
-                    {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
+                    {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
                   </div>
 
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/30 disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#0a1628] text-white rounded font-semibold hover:bg-[#1d4ed8] transition-colors duration-200 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {loading ? (
                       <>
-                        <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
                         Sending...
                       </>
                     ) : (
                       <>
-                        <Send size={16} />
+                        <Send size={15} />
                         Send Message
                       </>
                     )}
