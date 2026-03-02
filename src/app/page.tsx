@@ -1,19 +1,5 @@
-import Hero from '@/components/Hero';
-import Services from '@/components/Services';
-import Projects from '@/components/Projects';
-import Internship from '@/components/Internship';
-import About from '@/components/About';
-import Contact from '@/components/Contact';
+import LandingPage from '@/components/LandingPage';
 
 export default function Home() {
-  return (
-    <>
-      <Hero />
-      <Services />
-      <Projects />
-      <Internship />
-      <About />
-      <Contact />
-    </>
-  );
+  return <LandingPage />;
 }

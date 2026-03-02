@@ -2,15 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-
-const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Services', href: '#services' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Internships', href: '#internship' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
-];
+import { navItems } from '@/content/siteData';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -32,47 +24,44 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100'
-          : 'bg-white border-b border-gray-100'
+          ? 'border-b border-white/10 bg-slate-950/90 backdrop-blur-xl'
+          : 'border-b border-transparent bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <button
             onClick={() => handleNavClick('#home')}
             className="flex items-center gap-2.5 group"
           >
-            <div className="w-8 h-8 rounded bg-[#0a1628] flex items-center justify-center font-bold text-white text-sm">
-              U
+            <div className="grid h-8 w-8 place-items-center rounded-md border border-cyan-300/30 bg-cyan-300/10 text-xs font-bold text-cyan-200">
+              UA
             </div>
-            <span className="font-bold text-[#0a1628] text-lg tracking-tight">
-              UniAxis<span className="text-[#1d4ed8]"> Technologies</span>
+            <span className="text-sm font-semibold tracking-[0.16em] text-slate-100 sm:text-base">
+              UniAxis Technologies
             </span>
           </button>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-7">
-            {navLinks.map((link) => (
+          <nav className="hidden items-center gap-6 md:flex">
+            {navItems.map((link) => (
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="text-gray-600 hover:text-[#1d4ed8] transition-colors text-sm font-medium"
+                className="text-sm font-medium text-slate-300 transition-colors hover:text-cyan-200"
               >
                 {link.label}
               </button>
             ))}
             <button
               onClick={() => handleNavClick('#contact')}
-              className="px-4 py-2 bg-[#0a1628] text-white rounded text-sm font-medium hover:bg-[#1d4ed8] transition-colors duration-200"
+              className="rounded-md border border-cyan-300/40 bg-cyan-300/10 px-4 py-2 text-sm font-medium text-cyan-100 transition-colors hover:bg-cyan-300/20"
             >
-              Request Consultation
+              Start a Project
             </button>
           </nav>
 
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-[#0a1628] p-2"
+            className="p-2 text-slate-100 md:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -81,24 +70,23 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 shadow-md">
-          <nav className="flex flex-col px-4 py-4 gap-1">
-            {navLinks.map((link) => (
+        <div className="border-t border-white/10 bg-slate-950/95 px-4 py-4 shadow-2xl backdrop-blur-xl md:hidden">
+          <nav className="flex flex-col gap-1">
+            {navItems.map((link) => (
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="text-gray-600 hover:text-[#1d4ed8] transition-colors text-sm font-medium text-left py-2.5 border-b border-gray-50"
+                className="rounded-md px-3 py-2.5 text-left text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-cyan-200"
               >
                 {link.label}
               </button>
             ))}
             <button
               onClick={() => handleNavClick('#contact')}
-              className="mt-3 px-4 py-2.5 bg-[#0a1628] text-white rounded text-sm font-medium hover:bg-[#1d4ed8] transition-colors"
+              className="mt-3 rounded-md border border-cyan-300/40 bg-cyan-300/10 px-4 py-2.5 text-sm font-medium text-cyan-100"
             >
-              Request Consultation
+              Start a Project
             </button>
           </nav>
         </div>
