@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-display' });
 
 export const metadata: Metadata = {
-  title: 'UniAxis Technologies | IT Infrastructure, Cybersecurity & SaaS Solutions',
+  title: 'UniAxis Technologies',
   description:
     'UniAxis Technologies is a Jalgaon-based IT company offering IT infrastructure, cybersecurity, SaaS development, web solutions, and internship programs. Your trusted technology partner in Maharashtra, India.',
   keywords: [
@@ -62,6 +62,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://www.uniaxis.tech',
+  },
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
   },
 };
 

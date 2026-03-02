@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 import { navItems } from '@/content/siteData';
 
 export default function Header() {
@@ -34,9 +35,7 @@ export default function Header() {
             onClick={() => handleNavClick('#home')}
             className="flex items-center gap-2.5 group"
           >
-            <div className="grid h-8 w-8 place-items-center rounded-md border border-cyan-300/30 bg-cyan-300/10 text-xs font-bold text-cyan-200">
-              UA
-            </div>
+            <Image src="/logo.png" alt="UniAxis Technologies" width={32} height={32} className="h-8 w-8 rounded-md object-contain" />
             <span className="text-sm font-semibold tracking-[0.16em] text-slate-100 sm:text-base">
               UniAxis Technologies
             </span>

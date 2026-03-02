@@ -1,4 +1,5 @@
 import { Linkedin, Mail, MapPin, Github } from 'lucide-react';
+import Image from 'next/image';
 import { navItems } from '@/content/siteData';
 
 export default function Footer() {
@@ -10,11 +11,9 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr_1fr]">
           <div>
             <div className="mb-5 flex items-center gap-2.5">
-              <div className="grid h-8 w-8 place-items-center rounded-md border border-cyan-300/30 bg-cyan-300/10 text-xs font-bold text-cyan-200">
-                UA
-              </div>
+              <Image src="/logo.png" alt="UniAxis Technologies" width={32} height={32} className="h-8 w-8 rounded-md object-contain" />
               <span className="text-sm font-semibold tracking-[0.15em] text-slate-100">
-                UN IAXIS TECHNOLOGIES
+                UNIAXIS TECHNOLOGIES
               </span>
             </div>
             <p className="max-w-sm text-sm leading-7 text-slate-300">
