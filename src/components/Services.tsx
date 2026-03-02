@@ -5,17 +5,17 @@ import {
 } from 'lucide-react';
 
 const infraServices = [
-  { icon: Server, title: 'FTP Server Installation & Configuration', description: 'Complete FTP server setup with secure user management, access controls, and performance optimization for reliable file transfers.' },
-  { icon: Shield, title: 'RDP Setup & Secure Access', description: 'Remote Desktop Protocol configuration with hardened security, multi-factor authentication, and encrypted connections.' },
-  { icon: Wifi, title: 'Firewall & Network Security', description: 'Comprehensive firewall deployment and network hardening to protect your infrastructure from modern cyber threats.' },
-  { icon: Camera, title: 'CCTV Installation & Configuration', description: 'Professional IP camera installation with remote monitoring, motion detection, and cloud storage integration.' },
-  { icon: Monitor, title: 'PC Maintenance & Troubleshooting', description: 'Preventive maintenance, hardware diagnostics, software optimization, and fast resolution of technical issues.' },
+  { icon: Server, title: 'FTP Installation & Configuration', description: 'Complete FTP server setup with secure user management, access controls, and performance optimization for reliable file transfers.' },
+  { icon: Shield, title: 'Secure RDP Setup', description: 'Remote Desktop Protocol configuration with hardened security, multi-factor authentication, and encrypted connections.' },
+  { icon: Wifi, title: 'Firewall Setup & Network Hardening', description: 'Comprehensive firewall deployment and network hardening to protect your infrastructure from modern cyber threats.' },
+  { icon: Camera, title: 'CCTV Installation', description: 'Professional IP camera installation with remote monitoring, motion detection, and cloud storage integration.' },
+  { icon: Monitor, title: 'PC Maintenance', description: 'Preventive maintenance, hardware diagnostics, software optimization, and fast resolution of technical issues.' },
 ];
 
 const webServices = [
-  { icon: Globe, title: 'Website Designing', description: 'Beautiful, modern UI/UX designs that captivate visitors and reflect your brand identity across all devices.' },
+  { icon: Globe, title: 'Website Design', description: 'Beautiful, modern UI/UX designs that captivate visitors and reflect your brand identity across all devices.' },
   { icon: Code, title: 'Website Development', description: 'Full-stack web development using modern frameworks including React, Next.js, and Node.js for scalable applications.' },
-  { icon: Cloud, title: 'Deployment & Hosting Setup', description: 'Cloud deployment, CI/CD pipelines, domain configuration, and managed hosting on AWS, GCP, or VPS servers.' },
+  { icon: Cloud, title: 'Deployment & Hosting', description: 'Cloud deployment, CI/CD pipelines, domain configuration, and managed hosting on AWS, GCP, or VPS servers.' },
   { icon: Gauge, title: 'Performance Optimization', description: 'Website speed optimization, Core Web Vitals improvements, CDN setup, and database query optimization.' },
 ];
 
@@ -29,14 +29,12 @@ interface ServiceCardProps {
 function ServiceCard({ icon: Icon, title, description, delay = 0 }: ServiceCardProps) {
   return (
     <ScrollReveal delay={delay}>
-      <div className="group p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm hover:border-cyan-500/40 hover:bg-cyan-500/5 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 h-full">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center mb-4 group-hover:from-cyan-500/30 group-hover:to-blue-500/30 transition-all duration-300 group-hover:scale-110">
-          <Icon className="text-cyan-400" size={22} />
+      <div className="group p-6 rounded border border-gray-100 bg-white hover:border-blue-200 hover:shadow-md transition-all duration-200 h-full">
+        <div className="w-11 h-11 rounded bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors duration-200">
+          <Icon className="text-[#1d4ed8]" size={20} />
         </div>
-        <h3 className="text-white font-semibold mb-2 group-hover:text-cyan-300 transition-colors">
-          {title}
-        </h3>
-        <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
+        <h3 className="text-[#0a1628] font-semibold mb-2 text-sm">{title}</h3>
+        <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
       </div>
     </ScrollReveal>
   );
@@ -44,21 +42,18 @@ function ServiceCard({ icon: Icon, title, description, delay = 0 }: ServiceCardP
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 bg-[#0a1628]">
+    <section id="services" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-medium mb-4">
+          <div className="text-center mb-14">
+            <span className="inline-block px-3 py-1 rounded-full border border-blue-200 bg-blue-50 text-[#1d4ed8] text-xs font-medium mb-4">
               Our Services
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Comprehensive{' '}
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                Technology Services
-              </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#0a1628] mb-4">
+              Comprehensive Technology Services
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-500 max-w-2xl mx-auto">
               From securing your network infrastructure to building your digital presence — we deliver end-to-end technology solutions.
             </p>
           </div>
@@ -67,32 +62,26 @@ export default function Services() {
         {/* IT Infrastructure Services */}
         <ScrollReveal>
           <div className="flex items-center gap-4 mb-6">
-            <div className="flex items-center gap-3">
-              <div className="w-2 h-8 rounded-full bg-gradient-to-b from-cyan-400 to-blue-500" />
-              <h3 className="text-xl font-bold text-white">IT Infrastructure Services</h3>
-            </div>
-            <div className="flex-1 h-px bg-gradient-to-r from-cyan-500/30 to-transparent" />
+            <h3 className="text-lg font-bold text-[#0a1628] whitespace-nowrap">IT Infrastructure</h3>
+            <div className="flex-1 h-px bg-gray-200" />
           </div>
         </ScrollReveal>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
           {infraServices.map((service, index) => (
-            <ServiceCard key={service.title} {...service} delay={index * 80} />
+            <ServiceCard key={service.title} {...service} delay={index * 60} />
           ))}
         </div>
 
         {/* Web Solutions */}
         <ScrollReveal>
           <div className="flex items-center gap-4 mb-6">
-            <div className="flex items-center gap-3">
-              <div className="w-2 h-8 rounded-full bg-gradient-to-b from-blue-400 to-cyan-500" />
-              <h3 className="text-xl font-bold text-white">Web Solutions</h3>
-            </div>
-            <div className="flex-1 h-px bg-gradient-to-r from-blue-500/30 to-transparent" />
+            <h3 className="text-lg font-bold text-[#0a1628] whitespace-nowrap">Web Solutions</h3>
+            <div className="flex-1 h-px bg-gray-200" />
           </div>
         </ScrollReveal>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {webServices.map((service, index) => (
-            <ServiceCard key={service.title} {...service} delay={index * 80} />
+            <ServiceCard key={service.title} {...service} delay={index * 60} />
           ))}
         </div>
       </div>

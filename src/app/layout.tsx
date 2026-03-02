@@ -119,7 +119,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-[#0a1628] text-gray-100 antialiased">
+      <body className="bg-white text-[#0a1628] antialiased">
         <Header />
         <main>{children}</main>
         <Footer />

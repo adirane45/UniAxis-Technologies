@@ -7,97 +7,70 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a1628]">
-      {/* Animated network background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="network-bg absolute inset-0" />
-        {/* Floating orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
-        {/* Grid lines */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-20" />
-        {/* Particles */}
-        {Array.from({ length: 20 }).map((_, i) => (
-          <div
-            key={i}
-            className="particle absolute rounded-full bg-cyan-400"
-            style={{
-              width: `${Math.random() * 3 + 1}px`,
-              height: `${Math.random() * 3 + 1}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${Math.random() * 10 + 10}s`,
-            }}
-          />
-        ))}
-      </div>
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden">
+      {/* Subtle geometric tech pattern */}
+      <div className="absolute inset-0 bg-tech-pattern" />
+
+      {/* Very subtle blue tint on right side */}
+      <div className="absolute right-0 top-0 w-1/2 h-full bg-blue-50/40 pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-medium mb-8 animate-fade-in">
-          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-          Jalgaon&apos;s Leading Tech Startup
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-16">
+        {/* Location badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-200 bg-blue-50 text-[#1d4ed8] text-sm font-medium mb-8">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#1d4ed8]" />
+          Jalgaon, Maharashtra, India
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 animate-slide-up">
-          Empowering Businesses with{' '}
-          <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-            Secure &amp; Scalable
-          </span>{' '}
-          Technology Solutions
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0a1628] leading-tight mb-6">
+          Secure IT Infrastructure &amp;{' '}
+          <span className="text-[#1d4ed8]">
+            Smart Digital Solutions
+          </span>
         </h1>
 
         {/* Subheadline */}
-        <p className="text-gray-400 text-lg sm:text-xl mb-4 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-          IT Infrastructure · Cybersecurity · SaaS Solutions · Development · Internships
-        </p>
-        <p className="text-gray-500 text-base mb-10 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.2s' }}>
-          UniAxis Technologies delivers enterprise-grade IT solutions tailored for modern businesses.
-          From server infrastructure to custom SaaS platforms — we build, secure, and scale.
+        <p className="text-gray-600 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+          Professional IT services, cybersecurity solutions, SaaS products, and real-world internship programs.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{ animationDelay: '0.3s' }}>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
-            onClick={() => handleScroll('#contact')}
-            className="px-8 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-0.5"
+            onClick={() => handleScroll('#services')}
+            className="px-8 py-3.5 bg-[#0a1628] text-white rounded font-semibold hover:bg-[#1d4ed8] transition-colors duration-200"
           >
-            Get Consultation
+            Our Services
           </button>
           <button
-            onClick={() => handleScroll('#projects')}
-            className="px-8 py-3.5 border border-cyan-500/50 text-cyan-400 rounded-xl font-semibold hover:bg-cyan-500/10 transition-all duration-300 hover:-translate-y-0.5 backdrop-blur-sm"
+            onClick={() => handleScroll('#contact')}
+            className="px-8 py-3.5 border-2 border-[#0a1628] text-[#0a1628] rounded font-semibold hover:bg-[#0a1628] hover:text-white transition-colors duration-200"
           >
-            Explore Our Projects
+            Contact Us
           </button>
         </div>
 
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+        <div className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-6">
           {[
             { value: '50+', label: 'Projects Delivered' },
             { value: '30+', label: 'Happy Clients' },
             { value: '10+', label: 'Team Members' },
             { value: '24/7', label: 'Support' },
           ].map((stat) => (
-            <div key={stat.label} className="text-center p-4 rounded-xl border border-white/5 bg-white/5 backdrop-blur-sm">
-              <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                {stat.value}
-              </div>
-              <div className="text-gray-400 text-sm mt-1">{stat.label}</div>
+            <div key={stat.label} className="text-center p-5 rounded border border-gray-100 bg-white shadow-sm">
+              <div className="text-2xl font-bold text-[#1d4ed8]">{stat.value}</div>
+              <div className="text-gray-500 text-sm mt-1">{stat.label}</div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-        <span className="text-gray-500 text-xs">Scroll down</span>
-        <div className="w-0.5 h-8 bg-gradient-to-b from-cyan-500 to-transparent" />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+        <span className="text-gray-400 text-xs">Scroll down</span>
+        <div className="w-0.5 h-8 bg-gradient-to-b from-gray-300 to-transparent" />
       </div>
     </section>
   );
